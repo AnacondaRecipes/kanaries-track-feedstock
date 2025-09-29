@@ -10,17 +10,16 @@ source:
   sha256: 0b154cd2acdd3dc96804fc05aea7579d043353917a5c74fee4d9028c79126f2c
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - hatchling
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - dateutils >=0.6.12
     - requests >=2.31.0
     - backoff >=2.2.1
@@ -32,13 +31,17 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python
 
 about:
-  home: https://pypi.org/project/kanareis-track/
-  summary: 'kanaries_track: track to kanaries data infra'
+  home: https://pypi.org/project/kanaries-track/
+  summary: track to kanaries data infra
+  description: track to kanaries data infra
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
+  doc_url: https://pypi.org/project/kanaries-track/
+  dev_url: https://github.com/Kanaries/kanaries-track
 
 extra:
   recipe-maintainers:
